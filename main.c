@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 
    // repeat the calculation until we surpass the required decisions - maintaining ratio of PT to FT
    // save the previous value before goign over and use that
-   while ( (numFT * FTperformance) + (numPT * PTperformance) < decisions_required) {
+   while ( ( numFT * FTperformance ) + ( numPT * PTperformance ) < decisions_required ) {
       prev_numFT = numFT++;
       prev_numPT = numPT;
       numPT = numFT * oic_ratio;
