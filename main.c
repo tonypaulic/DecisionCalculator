@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-int main(int argc, char *argv[])
+int main ( int argc, char *argv[] )
 {
 
    // ensure proper number of parameters are passed
@@ -38,5 +38,8 @@ int main(int argc, char *argv[])
    printf("\nDecisions Required = %d\n", decisions_required);
    printf("Previous Number of FT OICs = %d\n", prev_numFT);
    printf("Previous Number of PT OICs = %d\n", prev_numPT);
+
+   // success
+   return (0);
 
 }
