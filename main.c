@@ -5,32 +5,26 @@
 int main(int argc, char *argv[])
 {
 
-   // define variables
-   int decisions_required = 0;
-   float oic_ratio = 0;
-   int numFT = 0;
-   int numPT = 0;
-   float FTperformance = 0;
-   float PTperformance = 0;
-   int prev_numFT = 0;
-   int prev_numPT = 0;
-
    // ensure proper number of parameters are passed
+   //    1 = number of decisions to model for
+   //    2 = FT/PT ratio to use
+   //    3 = FT OIC performance
+   //    4 = PT OIC performance
    if ( argc != 5 ) {
       printf("Number of parameters:%d\n", argc); 
       printf("Required paramters: DecisionsRequired OIC-PTFT-Ratio FTperformance PTperformance\n");
       exit(1);
    }
 
-   // get parameters into varialbes for processing
-   decisions_required = atoi(argv[1]);
-   oic_ratio = atof(argv[2]);
-   FTperformance = atof(argv[3]);
-   PTperformance = atof(argv[4]);
-
-   // set starting number at 1
-   numFT = 1;
-   numPT = numFT * oic_ratio;
+   // define variables
+   int decisions_required = atoi(argv[1]);   // how many total decisions to model for
+   float oic_ratio = atof(argv[2]);          // the ratio of FT to PT OICs
+   float FTperformance = atof(argv[3]);      // FT OIC performance value as decisions/year
+   float PTperformance = atof(argv[4]);      // PT OIC performance value as decisions/year
+   int numFT = 1;                            // number of FT OICs to meet decision requirements
+   int numPT = numFT * oic_ratio;            // number of PT OICs required, based on ratio
+   int prev_numFT = 0;
+   int prev_numPT = 0;
 
    // repeat the calculation until we surpass the required decisions - maintaining ratio of PT to FT
    // save the previous value before goign over and use that
