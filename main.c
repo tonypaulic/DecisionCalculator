@@ -23,8 +23,8 @@ int main(int argc, char *argv[])
    float PTperformance = atof(argv[4]);      // PT OIC performance value as decisions/year
    int numFT = 1;                            // number of FT OICs to meet decision requirements
    int numPT = numFT * oic_ratio;            // number of PT OICs required, based on ratio
-   int prev_numFT = 0;
-   int prev_numPT = 0;
+   int prev_numFT = 0;                       // holder for undershoot value of required number of FT OICs
+   int prev_numPT = 0;                       // holder for undershoot value of required number of PT OICs
 
    // repeat the calculation until we surpass the required decisions - maintaining ratio of PT to FT
    // save the previous value before goign over and use that
