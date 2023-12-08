@@ -12,6 +12,8 @@ int main(int argc, char *argv[])
    int numPT = 0;
    float FTperformance = 0;
    float PTperformance = 0;
+   int prev_numFT = 0;
+   int prev_numPT = 0;
 
    // ensure proper number of parameters are passed
    if ( argc != 5 ) {
@@ -31,14 +33,17 @@ int main(int argc, char *argv[])
    numPT = numFT * oic_ratio;
 
    // repeat the calculation until we surpass the required decisions - maintaining ratio of PT to FT
+   // save the previous value before goign over and use that
    while ( (numFT * FTperformance) + (numPT * PTperformance) < decisions_required) {
-      numFT++;
+      prev_numFT = numFT++;
+      prev_numPT = numPT;
       numPT = numFT * oic_ratio;
    }
 
    // output results
    printf("\nDecisions Required = %d\n", decisions_required);
-   printf("Number of FT OICs = %d\n", numFT);
-   printf("Number of PT OICs = %d\n", numPT);
+   printf("Previous Number of FT OICs = %d\n", prev_numFT);
+   printf("Previous Number of PT OICs = %d\n", prev_numPT);
+
 
 }
