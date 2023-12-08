@@ -39,5 +39,4 @@ int main(int argc, char *argv[])
    printf("Previous Number of FT OICs = %d\n", prev_numFT);
    printf("Previous Number of PT OICs = %d\n", prev_numPT);
 
-
 }
