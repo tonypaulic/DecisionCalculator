@@ -35,9 +35,9 @@ int main ( int argc, char *argv[] )
    }
 
    // output results
-   printf("\nDecisions Required = %d\n", decisions_required);
-   printf("Previous Number of FT OICs = %d\n", prev_numFT);
-   printf("Previous Number of PT OICs = %d\n", prev_numPT);
+   printf("\nRequested Decisions Total = %d\n", decisions_required);
+   printf("Predicted Number of required FT OICs = %d\n", prev_numFT);
+   printf("Predicted Number of required PT OICs = %d\n", prev_numPT);
 
    // success
    return (0);
