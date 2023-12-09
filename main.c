@@ -12,7 +12,7 @@ int main ( int argc, char *argv[] )
    //    4 = PT OIC performance
    if ( argc != 5 ) {
       printf("Number of parameters:%d\n", argc); 
-      printf("Required paramters: DecisionsRequired OIC-PTFT-Ratio FTperformance PTperformance\n");
+      printf("Required parameters: DecisionsRequired OIC-PTFT-Ratio FTperformance PTperformance\n");
       exit(1);
    }
 
