@@ -15,6 +15,9 @@ int main ( int argc, char *argv[] )
       exit(1);
    }
 
+   // file that contains historical and trend data
+   const char * FILENAME="input.wsiat";
+
    // define variables
    int decisions_required = atoi(argv[1]);   // how many total decisions to model for
    float oic_ratio = atof(argv[2]);          // the ratio of FT to PT OICs
