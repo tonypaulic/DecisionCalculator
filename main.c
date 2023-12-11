@@ -7,19 +7,17 @@ int main ( int argc, char *argv[] )
    // ensure proper number of parameters are passed
    //    1 = number of decisions to model for
    //    2 = FT/PT ratio to use
-   //    3 = FT OIC performance
-   //    4 = PT OIC performance
-   if ( argc != 5 ) {
+   if ( argc != 3 ) {
       printf("Number of parameters:%d\n", argc); 
-      printf("Required parameters: DecisionsRequired OIC-PTFT-Ratio FTperformance PTperformance\n");
+      printf("Required parameters: Decisions_Required PT-FT_Ratio\n");
       exit(1);
    }
 
    // define variables
    int decisions_required = atoi(argv[1]);   // how many total decisions to model for
    float oic_ratio = atof(argv[2]);          // the ratio of FT to PT OICs
-   float FTperformance = atof(argv[3]);      // FT OIC performance value as decisions/year
-   float PTperformance = atof(argv[4]);      // PT OIC performance value as decisions/year
+   float FTperformance = 40.06732;           // FT OIC performance value as decisions/year via trend
+   float PTperformance = 22.8625;            // PT OIC performance value as decisions/year via trend
    int numFT = 1;                            // number of FT OICs to meet decision requirements
    int numPT = numFT * oic_ratio;            // number of PT OICs required, based on ratio
    int prev_numFT = 0;                       // holder for undershoot value of required number of FT OICs
