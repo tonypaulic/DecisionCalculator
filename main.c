@@ -6,7 +6,7 @@ int main ( int argc, char *argv[] )
 
    // ensure proper number of parameters are passed
    //    1 = number of decisions to model for
-   //    2 = FT/PT ratio to use
+   //    2 = PT/FT ratio to use
    if ( argc != 3 ) {
       printf("Number of parameters:%d\n", argc); 
       printf("Required parameters: Decisions_Required PT-FT_Ratio\n");
