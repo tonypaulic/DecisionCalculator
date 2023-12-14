@@ -23,10 +23,20 @@ int main ( int argc, char *argv[] )
    int prev_numPT = 0;                       // holder for undershoot value of required number of PT OICs
 
    // repeat the calculation until we surpass the required decisions - maintaining ratio of PT to FT
-   // save the previous value before goign over and use that
+   // save the previous value before going over and use that. Wiggle it a bit.
+   numPT = numFT * oic_ratio;   
    while ( (( numFT * FTperformance ) + ( numPT * PTperformance )) < decisions_required ) {
-      numFT++;
-      numPT = numFT * oic_ratio;
+      numPT++;
+      if ( (( numFT * FTperformance ) + ( numPT * PTperformance )) < decisions_required ) {
+         numPT--;         
+         numFT++;
+      }
+      if ( (( numFT * FTperformance ) + ( numPT * PTperformance )) < decisions_required ) {
+         numPT++;         
+      }
+      if ( (( numFT * FTperformance ) + ( numPT * PTperformance )) < decisions_required ) {
+         numPT = numFT * oic_ratio;
+      }
    }
 
    // output results
