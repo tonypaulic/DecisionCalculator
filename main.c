@@ -43,8 +43,8 @@ int main ( int argc, char *argv[] )
    printf("Requested Decisions Total = %d\n", decisions_required);
    printf("Modelled Decisions Total = %.0f\n\n", (( numFT * FTperformance ) + ( numPT * PTperformance )));
    printf("PT to FT Ratio to be used = %.2f\n", oic_ratio);
-   printf("FT Performance Trend Value = %.5f\n", FTperformance);
-   printf("PT Performance Trend Value = %.5f\n", PTperformance);
+   printf("FT Performance Trend Value = %.2f\n", FTperformance);
+   printf("PT Performance Trend Value = %.2f\n", PTperformance);
    printf("-----------------------------------------\n");
    printf("Predicted Number of required FT OICs = %d\n", numFT);
    printf("Predicted Number of required PT OICs = %d\n", numPT);
